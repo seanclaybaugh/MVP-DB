@@ -7,6 +7,7 @@ app.use(express.json());
 
 app.get('/', model.getNames);
 app.get('/:username', model.getFaves);
+app.post('/login', model.login);
 app.post('/user', model.createUser);
 app.post('/name', model.likeName);
 

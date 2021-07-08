@@ -54,11 +54,23 @@ const getFaves = (req, res) => {
   })
 }
 
+const login = (req, res) => {
+  let sql = `Select id FROM users where username = '${req.body.username}' && pass = '${req.body.password}';`
+  db.con.query(sql, (err, data) => {
+    if(err){
+      res.sendStatus(500)
+    } else {
+      res.status(201).send('OK!')
+    }
+  })
+}
+
 
 module.exports = {
   getNames: getNames,
   createUser: createUser,
   likeName: likeName,
   getFaves: getFaves,
+  login:login,
 }
 
