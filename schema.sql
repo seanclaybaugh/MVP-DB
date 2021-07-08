@@ -19,6 +19,13 @@ CREATE TABLE names (
 
 INSERT INTO users (username, email, pass) VALUES ('Sean', 'sean@gmail.com', 'seancla');
 
+CREATE TABLE Sean (
+  id INT NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+  gender VARCHAR(15) NOT NULL,
+  babyname VARCHAR(50) NOT NULL
+);
+
+
 LOAD DATA LOCAL INFILE '/Users/sean-macbook/hackreactor/MVP-DB/Names.csv'
 INTO TABLE names
 FIELDS TERMINATED BY ','
